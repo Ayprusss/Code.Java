@@ -61,7 +61,6 @@ public class Q5 {
             num = 1;
         } else {
             for (int i = 2; i < position; i ++) {
-                System.out.println("numb at " +i+  " in for loop: "+ num);
                 
                 num = num2;
                 num2 = fibonacci;

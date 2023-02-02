@@ -3,7 +3,7 @@ public class Q3_SquareArray{
     public static int[] createArray(int size) {
         int[] mainArray;
         mainArray = new int[size];
-        for(int i = 0; i < mainArray.length; i ++){
+        for(int i = 0; i != mainArray.length; i ++){
             mainArray[i] = i * i;
         }
         return mainArray;

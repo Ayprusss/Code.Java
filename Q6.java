@@ -35,10 +35,10 @@ public class Q6 {
 
         int numOfPassed = calculateNumberPassed(classMarks);
         if(numOfPassed > 0) {
-            System.out.println(numOfFailed+" students have passed the class");
+            System.out.println(numOfPassed+" students have passed the class");
         }
         else {
-            System.out.println("no one failed the class.");
+            System.out.println("no one passed the class.");
         }
     }
 
@@ -56,19 +56,19 @@ public class Q6 {
     public static double calculateMedian(double[] notes) {
          //shows that the list of marks is even
         
-        int num1 = (notes.length/2) - 1;
-        int num2 = (notes.length/2) + 1;
+        int num1 = (notes.length/2) - 1;//find value one above; since there are ten marks, there's no definite median, so you grab the value one before that
+        int num2 = (notes.length/2) + 1;// '' and the one after that
 
-        double median = (notes[num1] + notes[num2]) / 2;
+        double median = (notes[num1] + notes[num2]) / 2;// sum of them and divide them by 2
 
         return median;
     }
 
-    public static int calculateNumberFailed(double[] notes) {
+    public static int calculateNumberFailed(double[] notes) {// for loop to look through each mark/
         int count = 0;
         for (int a = 0; a < 10; a ++) {
-            double mark = notes[a];
-            if (mark <= 50){
+            double mark = notes[a];// if the mark is less than 50, a counter comes up. A student failed the class
+            if (mark < 50){
                 count ++;
             }
 
@@ -78,9 +78,9 @@ public class Q6 {
 
     public static int calculateNumberPassed(double[] notes) {
         int count = 0;
-        for (int a = 0; a < 10; a ++) {
+        for (int a = 0; a < 10; a ++) {// for loop to look through each mark/
             double mark = notes[a];
-            if (mark > 50){
+            if (mark > 50) {// if the mark is more than 50, a counter comes up. A student passed the class
                 count ++;
             }
 

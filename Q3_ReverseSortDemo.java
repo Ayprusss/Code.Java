@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 public class Q3_ReverseSortDemo {
     
@@ -15,9 +15,24 @@ public class Q3_ReverseSortDemo {
     public static void reverseSort(char[] values) { // Reverse means that it goes from greatest to smallest; 
         // your code here 
 
-        Arrays.sort(values);
 
-        System.out.println(Arrays.toString(values));
+
+        int x, y, smallIndx;
+        char tempVal;
+
+        for (x = 0; x < values.length - 1; x ++) {
+            smallIndx = x;
+            for (y = x + 1; y < values.length; y ++) {
+                if (values[y] > values[smallIndx]) {
+                    smallIndx = y;
+                }
+            }
+
+            tempVal = values[smallIndx];
+            values[smallIndx] = values[x];
+            values[x] = tempVal;
+        }
+        /*Arrays.sort(values);
 
         int j = 0;
         char[] tempList;
@@ -32,7 +47,7 @@ public class Q3_ReverseSortDemo {
             values[b] = tempList[b];               // Since the tempList now goes in a forward order; one for loop is all that's needed.
         }
         //for DEBUG:   
-        System.out.println(Arrays.toString(values));
+        System.out.println(Arrays.toString(values)); */
             
     }
 }
