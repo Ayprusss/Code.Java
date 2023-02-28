@@ -119,7 +119,7 @@ public class Simulator {
 				incomingQueue.enqueue(newEntry);
 
 			}
-			boolean leaving = false; // need to find use for this later.
+		
 				for (int a = 0; a < lot.getNumRows(); a ++) { // goes through every row of the parking lot.
 					for (int b = 0; b < lot.getNumSpotsPerRow(); b ++) { // goes through every column/spot of the parking lot.
 						Spot carLot = lot.getSpotAt(a, b); // if it's not empty; we call for the spot and its information.
@@ -130,19 +130,15 @@ public class Simulator {
 							if ((duration >= MAX_PARKING_DURATION) || (((duration <= MAX_PARKING_DURATION) && RandomGenerator.eventOccurred(departurePDF.pdf(duration))))){
 								Spot removedCar = lot.remove(a,b);
 								outgoingQueue.enqueue(removedCar);
-								leaving = true;
+								
 							}
 						}
-						if (leaving) {
-							break;
-						}
+						
 				}
-				if (leaving) {
-					break;
-				}
+	
 			}
 			
-			if (!incomingQueue.isEmpty() && (queued == false)) { // FIX THIS.
+			if (!incomingQueue.isEmpty() && (queued == false)) { 
 
 				inSpot = incomingQueue.dequeue();
 				queuedEntry = inSpot;
@@ -155,8 +151,7 @@ public class Simulator {
 					queued = true;
 				}
 			}
-
-			if (queued) {
+			else if (queued) {
 				queuedEntry.setTimestamp(clock);
 
 				Boolean queuePark = lot.attemptParking(queuedEntry.getCar(), queuedEntry.getTimestamp());
@@ -169,6 +164,8 @@ public class Simulator {
 					queued = true;
 				}
 			}
+
+			
 			if (outgoingQueue.isEmpty()== false) {
 				Spot outSpot = outgoingQueue.dequeue();
 				System.out.println(outSpot.getCar()/* c is the car that gets out of the parking lot */ + " EXITED at timestep: " + clock + "; occupancy is at " + this.lot.getTotalOccupancy());
