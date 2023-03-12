@@ -1,5 +1,5 @@
-Name: Anthony Le and David Yang
-Student ID: 300287511 ; 300303876
+Name: Anthony Le 
+Student ID: 300287511 
 Course Code: ITI 1121
 
 
@@ -8,3 +8,8 @@ these files include:
 
 Car.java, CarType.java, LinkedQueue.java, ParkingLot.java, Queue.java, RandomGenerator.java, Rational.java, Simulator.java, Spot.java, StudentInfo.java, TriangularDistribution.java,
 Util.java, as well as the output files (output1.txt, output2.txt, output3.txt, output4.txt).
+
+
+
+
+
