@@ -4,8 +4,7 @@ Course Code: ITI 1121
 
 this folder contains 13 individual files, but that excludes the included output files and the produced class files from compilation.
 
-This assignment is the third continuation of the ParkingLot assignment, where in this assignment, we are assigned to determine the minimum amount of parking lot spaces depending
-on the inputed hourly rate at which a car can be inputed into the parking lot. 
+This assignment is the third continuation of the ParkingLot assignment, where in this assignment, we are assigned to determine the minimum amount of parking lot spaces depending on the inputed hourly rate at which a car can be inputed into the parking lot. 
 
 this folder contains the following files:
 
